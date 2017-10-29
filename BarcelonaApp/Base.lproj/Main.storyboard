@@ -1,24 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4tP-tx-2wn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GillSans.ttc">
+            <string>GillSans</string>
+        </array>
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+            <string>Helvetica-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Главная-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BarcelonaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QPK-fc-fD1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="292" id="t1L-ei-1Mp" customClass="NewsTableViewCell" customModule="BarcelonaApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="292"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t1L-ei-1Mp" id="bih-sm-o8c">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="292"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TkD-H4-Ukn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="176"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="176" id="6gd-vb-PXM"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzs-vC-CWq">
+                                                    <rect key="frame" x="10" y="201" width="355" height="50"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVw-h7-Qef">
+                                                    <rect key="frame" x="10" y="259" width="159" height="15"/>
+                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                    <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="rVw-h7-Qef" secondAttribute="bottom" constant="7.5" id="E7g-XV-Seq"/>
+                                                <constraint firstItem="rVw-h7-Qef" firstAttribute="width" secondItem="bih-sm-o8c" secondAttribute="width" multiplier="0.3" constant="46.5" id="QRD-lB-tMV"/>
+                                                <constraint firstAttribute="trailing" secondItem="TkD-H4-Ukn" secondAttribute="trailing" id="UdP-Sk-5BO"/>
+                                                <constraint firstItem="TkD-H4-Ukn" firstAttribute="top" secondItem="bih-sm-o8c" secondAttribute="top" id="WPN-AX-CFl"/>
+                                                <constraint firstItem="rVw-h7-Qef" firstAttribute="leading" secondItem="bih-sm-o8c" secondAttribute="leading" constant="10" id="gIn-iL-kzV"/>
+                                                <constraint firstItem="Uzs-vC-CWq" firstAttribute="height" secondItem="bih-sm-o8c" secondAttribute="height" multiplier="0.3" constant="-27.450000000000003" id="iv0-dD-8Hn"/>
+                                                <constraint firstItem="rVw-h7-Qef" firstAttribute="height" secondItem="bih-sm-o8c" secondAttribute="height" multiplier="0.05" id="l0x-vV-cJe"/>
+                                                <constraint firstAttribute="trailing" secondItem="Uzs-vC-CWq" secondAttribute="trailing" constant="10" id="mH6-EZ-RJN"/>
+                                                <constraint firstItem="Uzs-vC-CWq" firstAttribute="top" secondItem="TkD-H4-Ukn" secondAttribute="bottom" constant="25" id="ptD-Gq-A4n"/>
+                                                <constraint firstItem="Uzs-vC-CWq" firstAttribute="leading" secondItem="bih-sm-o8c" secondAttribute="leading" constant="10" id="sHE-y9-KM5"/>
+                                                <constraint firstItem="TkD-H4-Ukn" firstAttribute="leading" secondItem="bih-sm-o8c" secondAttribute="leading" id="uph-hA-0zY"/>
+                                                <constraint firstItem="TkD-H4-Ukn" firstAttribute="height" secondItem="bih-sm-o8c" secondAttribute="height" multiplier="0.5" constant="30" id="xuQ-rF-dgq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newsDate" destination="rVw-h7-Qef" id="Cn9-kQ-MrP"/>
+                                            <outlet property="newsImageView" destination="TkD-H4-Ukn" id="XKP-ZK-wI4"/>
+                                            <outlet property="newsTitle" destination="Uzs-vC-CWq" id="7f6-Uo-mzg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="DrN-eW-iSn"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gJ5-Wh-jpk"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QPK-fc-fD1" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.72" constant="122.75999999999999" id="7ss-4b-Odd"/>
+                            <constraint firstItem="QPK-fc-fD1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="8m2-im-jB0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QPK-fc-fD1" secondAttribute="trailing" id="FC9-qr-OVI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QPK-fc-fD1" secondAttribute="bottom" id="Waf-vr-ee7"/>
+                            <constraint firstItem="QPK-fc-fD1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lmh-mC-kcM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Главная" id="RJo-UJ-cTz" colorLabel="IBBuiltInLabel-Red"/>
+                    <connections>
+                        <outlet property="tableView" destination="QPK-fc-fD1" id="Kch-oE-UZG"/>
+                        <segue destination="Vq5-92-EzH" kind="show" identifier="showNewsDetail" id="gTm-2L-adI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="815.20000000000005" y="133.5832083958021"/>
+        </scene>
+        <!--News Detail View Controller-->
+        <scene sceneID="cA1-kz-h1B">
+            <objects>
+                <viewController id="Vq5-92-EzH" customClass="NewsDetailViewController" customModule="BarcelonaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Ov-Be-h5b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsTitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9p-Gx-saS">
+                                <rect key="frame" x="16" y="86" width="347" height="66.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rsh-6g-fm2">
+                                <rect key="frame" x="16" y="160.5" width="150" height="27"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LSE-V2-wom">
+                                <rect key="frame" x="16" y="194.5" width="343" height="266.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NewsDesc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgy-Tc-UOf">
+                                <rect key="frame" x="16" y="495" width="343" height="152"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K9p-Gx-saS" firstAttribute="leading" secondItem="1Ov-Be-h5b" secondAttribute="leadingMargin" id="1lo-ov-YGj"/>
+                            <constraint firstItem="LSE-V2-wom" firstAttribute="width" secondItem="1Ov-Be-h5b" secondAttribute="width" multiplier="0.915" id="MdL-CV-NSQ"/>
+                            <constraint firstItem="Rsh-6g-fm2" firstAttribute="height" secondItem="1Ov-Be-h5b" secondAttribute="height" multiplier="0.04" id="Niz-Uv-uIO"/>
+                            <constraint firstItem="Rsh-6g-fm2" firstAttribute="leading" secondItem="K9p-Gx-saS" secondAttribute="leading" id="Qnp-72-s11"/>
+                            <constraint firstItem="cgy-Tc-UOf" firstAttribute="leading" secondItem="LSE-V2-wom" secondAttribute="leading" id="Rn2-ER-ouW"/>
+                            <constraint firstItem="K9p-Gx-saS" firstAttribute="top" secondItem="jRF-aN-YuE" secondAttribute="top" constant="22" id="Squ-9w-u03"/>
+                            <constraint firstItem="LSE-V2-wom" firstAttribute="top" secondItem="Rsh-6g-fm2" secondAttribute="bottom" constant="7" id="Zh4-Jp-HcB"/>
+                            <constraint firstItem="Rsh-6g-fm2" firstAttribute="width" secondItem="1Ov-Be-h5b" secondAttribute="width" multiplier="0.4" id="asA-aJ-sBd"/>
+                            <constraint firstItem="K9p-Gx-saS" firstAttribute="width" secondItem="1Ov-Be-h5b" secondAttribute="width" multiplier="0.925" id="eAx-Vt-1uV"/>
+                            <constraint firstItem="cgy-Tc-UOf" firstAttribute="height" secondItem="1Ov-Be-h5b" secondAttribute="height" multiplier="0.3" id="hna-Sm-Rfq"/>
+                            <constraint firstItem="LSE-V2-wom" firstAttribute="leading" secondItem="Rsh-6g-fm2" secondAttribute="leading" id="iN9-6g-sVI"/>
+                            <constraint firstItem="LSE-V2-wom" firstAttribute="height" secondItem="1Ov-Be-h5b" secondAttribute="height" multiplier="0.4" id="qhA-hY-UsP"/>
+                            <constraint firstItem="cgy-Tc-UOf" firstAttribute="width" secondItem="1Ov-Be-h5b" secondAttribute="width" multiplier="0.915" id="t5Z-C4-RWB"/>
+                            <constraint firstItem="Rsh-6g-fm2" firstAttribute="top" secondItem="K9p-Gx-saS" secondAttribute="bottom" constant="8" id="ulb-GG-iCA"/>
+                            <constraint firstItem="cgy-Tc-UOf" firstAttribute="top" secondItem="LSE-V2-wom" secondAttribute="bottom" constant="34" id="wrg-ZK-kGv"/>
+                            <constraint firstItem="K9p-Gx-saS" firstAttribute="height" secondItem="1Ov-Be-h5b" secondAttribute="height" multiplier="0.1" id="zm9-7V-Pf7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jRF-aN-YuE"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="newsDateTitle" destination="Rsh-6g-fm2" id="BI8-Dt-gph"/>
+                        <outlet property="newsDescriptionLabel" destination="cgy-Tc-UOf" id="WS3-qY-FYK"/>
+                        <outlet property="newsImageVIew" destination="LSE-V2-wom" id="buh-BP-GqO"/>
+                        <outlet property="newsTitleLabel" destination="K9p-Gx-saS" id="JPv-WE-zWn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e4Y-bH-twm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1615.2" y="134.48275862068968"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5vU-bR-JMr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4tP-tx-2wn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="snP-hQ-K48">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="x41-A2-bJr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1as-1X-ows" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1004" y="134"/>
         </scene>
     </scenes>
 </document>

@@ -1,0 +1,6 @@
+framework module Pods_BarcelonaAppUITests {
+  umbrella header "Pods-BarcelonaAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
