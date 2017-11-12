@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    static var menuBool = true
     var window: UIWindow?
 
 

@@ -7,6 +7,7 @@ target 'BarcelonaApp' do
   pod 'Alamofire', '4.4.0'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'NVActivityIndicatorView'
 
   # Pods for BarcelonaApp
 

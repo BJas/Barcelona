@@ -10,12 +10,20 @@
 		180B70441F970FD1004140C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B70431F970FD1004140C0 /* AppDelegate.swift */; };
 		180B70461F970FD1004140C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B70451F970FD1004140C0 /* ViewController.swift */; };
 		180B70491F970FD1004140C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180B70471F970FD1004140C0 /* Main.storyboard */; };
-		180B704B1F970FD1004140C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180B704A1F970FD1004140C0 /* Assets.xcassets */; };
 		180B704E1F970FD1004140C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180B704C1F970FD1004140C0 /* LaunchScreen.storyboard */; };
 		180B70591F970FD1004140C0 /* BarcelonaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B70581F970FD1004140C0 /* BarcelonaAppTests.swift */; };
 		180B70641F970FD1004140C0 /* BarcelonaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B70631F970FD1004140C0 /* BarcelonaAppUITests.swift */; };
 		180B70721F9713F7004140C0 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B70711F9713F7004140C0 /* NewsTableViewCell.swift */; };
 		180B70741F972216004140C0 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B70731F972216004140C0 /* NewsDetailViewController.swift */; };
+		181335B91FB76D450035E98E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181335B81FB76D450035E98E /* MenuViewController.swift */; };
+		181335BB1FB76E190035E98E /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181335BA1FB76E190035E98E /* MenuTableViewCell.swift */; };
+		18664AAF1FA8DF7C005A35BE /* NewsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18664AAE1FA8DF7C005A35BE /* NewsDetailTableViewCell.swift */; };
+		18802C141FB5FEFB002AEC94 /* NewsDetailCommentViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18802C131FB5FEFB002AEC94 /* NewsDetailCommentViewTableViewCell.swift */; };
+		18802C1C1FB75FD7002AEC94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18802C1B1FB75FD7002AEC94 /* Assets.xcassets */; };
+		18860F401FB2C29200725C35 /* NewsDetailCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18860F3F1FB2C29200725C35 /* NewsDetailCommentTableViewCell.swift */; };
+		18909C441FB83428007D3787 /* StandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C431FB83428007D3787 /* StandingTableViewCell.swift */; };
+		18909C461FB83444007D3787 /* StandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C451FB83444007D3787 /* StandingViewController.swift */; };
+		18909C481FB83546007D3787 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C471FB83546007D3787 /* File.swift */; };
 		18D4E7311FA04CD1004A5EB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18D4E7301FA04CD1004A5EB8 /* GoogleService-Info.plist */; };
 		18F24D6C1F9D03DC00A5BB14 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F24D6B1F9D03DC00A5BB14 /* News.swift */; };
 		4A6A1A6487C60BF47BE4AFE7 /* Pods_BarcelonaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 472BAF7E1159CDE31C9EB646 /* Pods_BarcelonaApp.framework */; };
@@ -45,7 +53,6 @@
 		180B70431F970FD1004140C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		180B70451F970FD1004140C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		180B70481F970FD1004140C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		180B704A1F970FD1004140C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180B704D1F970FD1004140C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180B704F1F970FD1004140C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180B70541F970FD1004140C0 /* BarcelonaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarcelonaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +63,15 @@
 		180B70651F970FD1004140C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180B70711F9713F7004140C0 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		180B70731F972216004140C0 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		181335B81FB76D450035E98E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		181335BA1FB76E190035E98E /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		18664AAE1FA8DF7C005A35BE /* NewsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailTableViewCell.swift; sourceTree = "<group>"; };
+		18802C131FB5FEFB002AEC94 /* NewsDetailCommentViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailCommentViewTableViewCell.swift; sourceTree = "<group>"; };
+		18802C1B1FB75FD7002AEC94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18860F3F1FB2C29200725C35 /* NewsDetailCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailCommentTableViewCell.swift; sourceTree = "<group>"; };
+		18909C431FB83428007D3787 /* StandingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingTableViewCell.swift; sourceTree = "<group>"; };
+		18909C451FB83444007D3787 /* StandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingViewController.swift; sourceTree = "<group>"; };
+		18909C471FB83546007D3787 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		18D4E7301FA04CD1004A5EB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18EEB6F35D01B3DDC3781F8E /* Pods-BarcelonaAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcelonaAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarcelonaAppUITests/Pods-BarcelonaAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		18F24D6B1F9D03DC00A5BB14 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -122,16 +138,22 @@
 		180B70421F970FD1004140C0 /* BarcelonaApp */ = {
 			isa = PBXGroup;
 			children = (
+				18909C421FB8340D007D3787 /* Table */,
+				18802C1B1FB75FD7002AEC94 /* Assets.xcassets */,
 				18D4E7301FA04CD1004A5EB8 /* GoogleService-Info.plist */,
 				180B70431F970FD1004140C0 /* AppDelegate.swift */,
 				180B70451F970FD1004140C0 /* ViewController.swift */,
+				18F24D6B1F9D03DC00A5BB14 /* News.swift */,
+				180B70711F9713F7004140C0 /* NewsTableViewCell.swift */,
+				18664AAE1FA8DF7C005A35BE /* NewsDetailTableViewCell.swift */,
+				180B70731F972216004140C0 /* NewsDetailViewController.swift */,
 				180B70471F970FD1004140C0 /* Main.storyboard */,
-				180B704A1F970FD1004140C0 /* Assets.xcassets */,
 				180B704C1F970FD1004140C0 /* LaunchScreen.storyboard */,
 				180B704F1F970FD1004140C0 /* Info.plist */,
-				180B70711F9713F7004140C0 /* NewsTableViewCell.swift */,
-				180B70731F972216004140C0 /* NewsDetailViewController.swift */,
-				18F24D6B1F9D03DC00A5BB14 /* News.swift */,
+				18860F3F1FB2C29200725C35 /* NewsDetailCommentTableViewCell.swift */,
+				18802C131FB5FEFB002AEC94 /* NewsDetailCommentViewTableViewCell.swift */,
+				181335B81FB76D450035E98E /* MenuViewController.swift */,
+				181335BA1FB76E190035E98E /* MenuTableViewCell.swift */,
 			);
 			path = BarcelonaApp;
 			sourceTree = "<group>";
@@ -152,6 +174,16 @@
 				180B70651F970FD1004140C0 /* Info.plist */,
 			);
 			path = BarcelonaAppUITests;
+			sourceTree = "<group>";
+		};
+		18909C421FB8340D007D3787 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				18909C431FB83428007D3787 /* StandingTableViewCell.swift */,
+				18909C451FB83444007D3787 /* StandingViewController.swift */,
+				18909C471FB83546007D3787 /* File.swift */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 		713D436522615381B99FF640 /* Frameworks */ = {
@@ -295,7 +327,7 @@
 			files = (
 				180B704E1F970FD1004140C0 /* LaunchScreen.storyboard in Resources */,
 				18D4E7311FA04CD1004A5EB8 /* GoogleService-Info.plist in Resources */,
-				180B704B1F970FD1004140C0 /* Assets.xcassets in Resources */,
+				18802C1C1FB75FD7002AEC94 /* Assets.xcassets in Resources */,
 				180B70491F970FD1004140C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +394,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-BarcelonaApp/Pods-BarcelonaApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -369,6 +402,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -480,8 +514,16 @@
 				180B70741F972216004140C0 /* NewsDetailViewController.swift in Sources */,
 				180B70461F970FD1004140C0 /* ViewController.swift in Sources */,
 				180B70441F970FD1004140C0 /* AppDelegate.swift in Sources */,
+				18909C441FB83428007D3787 /* StandingTableViewCell.swift in Sources */,
 				18F24D6C1F9D03DC00A5BB14 /* News.swift in Sources */,
+				181335BB1FB76E190035E98E /* MenuTableViewCell.swift in Sources */,
+				181335B91FB76D450035E98E /* MenuViewController.swift in Sources */,
+				18802C141FB5FEFB002AEC94 /* NewsDetailCommentViewTableViewCell.swift in Sources */,
+				18860F401FB2C29200725C35 /* NewsDetailCommentTableViewCell.swift in Sources */,
 				180B70721F9713F7004140C0 /* NewsTableViewCell.swift in Sources */,
+				18909C481FB83546007D3787 /* File.swift in Sources */,
+				18909C461FB83444007D3787 /* StandingViewController.swift in Sources */,
+				18664AAF1FA8DF7C005A35BE /* NewsDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,7 +691,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2SCM2BKTSM;
 				INFOPLIST_FILE = BarcelonaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barcelonaapp-de2c9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -664,7 +708,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2SCM2BKTSM;
 				INFOPLIST_FILE = BarcelonaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barcelonaapp-de2c9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
