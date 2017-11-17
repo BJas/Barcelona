@@ -8,19 +8,21 @@
 
 import UIKit
 import Alamofire
+import FirebaseDatabase
 import NVActivityIndicatorView
 
 class StandingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var standingList:Array<Standing> = [];
     @IBOutlet weak var standingTableView: UITableView!
     var menuVC : MenuViewController!
-    
-    var standingTeam = ["FC Barcelona": "Барселона", "Valencia CF": "Валенсия", "Real Madrid CF": "Реал Мадрид", "Club Atlético de Madrid": "Атлетико",
-                        "Villarreal CF": "Вильярреал", "Sevilla FC":"Севилья", "Real Sociedad de Fútbol":"Реал Сосьедад", "Real Betis":"Бетис", "CD Leganes":"Леганес", "Girona FC":"Жирона","RC Celta de Vigo":"Сельта","Getafe CF":"Хетафе","RCD Espanyol":"Эспаньол","Levante UD":"Леванте","Athletic Club":"Атлетик","RC Deportivo La Coruna":"Депортиво","SD Eibar":"Эйбар","Deportivo Alavés":"Алавес","UD Las Palmas":"Лас-Пальмас","Málaga CF":"Малага"]
-    
+    var teamEng = ""
+    var standingTeam = [String: String]()
+    var standingTeamImg = [String: String]()
+    var rootRef: DatabaseReference! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         standingTableView.tableFooterView = UIView()
         menuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToGosture))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
@@ -31,12 +33,30 @@ class StandingViewController: UIViewController, UITableViewDelegate, UITableView
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
         
-        let myActivityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2-25, y: self.view.frame.height/2-25, width: 50, height: 50))
-        myActivityIndicator.color =  UIColor.init(red: 0/255, green: 77/255, blue: 152/255, alpha: 1)
-        myActivityIndicator.type = .ballSpinFadeLoader
+        let myActivityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2-15, y: self.view.frame.height/2-15, width: 30, height: 30))
+        myActivityIndicator.color =  UIColor.init(red: 165/255, green: 0/255, blue: 68/255, alpha: 1)
+        myActivityIndicator.type = .lineSpinFadeLoader
         myActivityIndicator.startAnimating()
         view.addSubview(myActivityIndicator)
         
+        //Firebase
+        rootRef = Database.database().reference()
+        let itemsRef = rootRef.child("teams")
+        
+        itemsRef.observe(DataEventType.value, with: { (snapshot) in
+            for teamInfo in snapshot.children.allObjects as![DataSnapshot] {
+                let teamObject = teamInfo.value as? [String: AnyObject]
+                let img = teamObject?["imgUrl"] as? String ?? ""
+                let english = teamObject?["nameInEnglish"] as? String ?? ""
+                let russian = teamObject?["nameInRussian"] as? String ?? ""
+                self.standingTeam[english] = russian
+                self.standingTeamImg[english] = img
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        //Alamofire
         Alamofire.request("http://api.football-data.org/v1/competitions/455/leagueTable").responseJSON{
             response in
             let result = response.result
@@ -44,18 +64,33 @@ class StandingViewController: UIViewController, UITableViewDelegate, UITableView
                 if let innerDict = dict["standing"] as? [[String: Any]]{
                     for item in innerDict{
                         var team = "";
+                        var teamImgUrl = "";
                         for (teamInEnglish, teamInRussian) in self.standingTeam {
-                            if(item["teamName"] as! String == teamInEnglish) {
+                            if(item["teamName"] as? String == teamInEnglish) {
                                 team = teamInRussian
                                 break;
                             }
                         }
+                        
+                        for (teamName, teamImg) in self.standingTeamImg{
+                            if(item["teamName"] as? String == teamName) {
+                                teamImgUrl = teamImg
+                                break;
+                            }
+                        }
+                        
+                        let position = item["position"] as? Int;
+                        let points = item["points"] as? Int;
+                        let gd = item["goalDifference"] as? Int;
+                        let w = item["wins"] as? Int;
+                        let d = item["draws"] as? Int;
+                        let l = item["losses"] as? Int;
+                        let pg = item["playedGames"] as? Int;
+                        let gs = item["goals"] as? Int;
+                        let ga = item["goalsAgainst"] as? Int;
                         self.standingList.append(Standing(
-                            position: item["position"] as! Int,
-                            teamName: team,
-                            points: item["points"] as! Int,
-                            goal: item["goalDifference"] as! Int,
-                            wins: item["wins"] as! Int, draws: item["draws"] as! Int, losses: item["losses"] as! Int, games: item["playedGames"] as! Int))
+                            position: position!, teamName: team, points: points!, goal: gd!,
+                            wins: w!, draws: d!, losses: l!, games: pg!, imgUrl:  teamImgUrl, goalAgainst : ga!, goalScore : gs!))
                     }
                 }
             }
@@ -70,6 +105,7 @@ class StandingViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func showMenu() {
+        self.menuVC.view.backgroundColor = UIColor.white.withAlphaComponent(0)
         UIView.animate(withDuration: 0.3) { ()->  Void in
             self.menuVC.view.backgroundColor = UIColor.white.withAlphaComponent(0)
             self.menuVC.view.frame = CGRect(x: 0, y: 63, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
@@ -111,33 +147,54 @@ class StandingViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "standingCell", for: indexPath) as? StandingTableViewCell
-        
         if (indexPath.row == 0) {
             cell?.positionLabel.text = " №"
-            cell?.positionLabel.textColor = UIColor.white
+            cell?.positionLabel.textColor = UIColor(red: 113/255, green: 113/255, blue: 113/255, alpha: 1)
             cell?.teamLabel.text = "Команда"
-            cell?.teamLabel.textColor = UIColor.white
-            cell?.infoLabel.text = "М  В  Н  П  "
-            cell?.infoLabel.textColor = UIColor.white
+            cell?.imageLabel.text = ""
+            cell?.teamLabel.textColor = UIColor(red: 113/255, green: 113/255, blue: 113/255, alpha: 1)
+            cell?.infoLabel.text = "М   В    Н    П  "
+            cell?.infoLabel.textColor = UIColor(red: 113/255, green: 113/255, blue: 113/255, alpha: 1)
             cell?.goalsLabel.text = " РГ "
-            cell?.goalsLabel.textColor = UIColor.white
+            cell?.goalsLabel.textColor = UIColor(red: 113/255, green: 113/255, blue: 113/255, alpha: 1)
             cell?.pointLabel.text = "O  "
-            cell?.pointLabel.textColor = UIColor.white
-            cell?.backgroundColor = UIColor.init(red: 0, green: 77/255, blue: 152/255, alpha: 1)
-            cell?.tintColor = UIColor.white
-            cell?.preservesSuperviewLayoutMargins = false
-            cell?.separatorInset = UIEdgeInsets.zero
-            cell?.layoutMargins = UIEdgeInsets.zero
+            cell?.pointLabel.textColor = UIColor(red: 113/255, green: 113/255, blue: 113/255, alpha: 1)
+            cell?.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+            cell?.tintColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
             
         }
         else {
-            if (indexPath.row % 2 == 0) {
-                cell?.backgroundColor = UIColor.init(red: 222/255, green: 222/255, blue: 222/255, alpha: 1)
+            var img = ""
+            for (teamInEnglish, teamInRussian) in standingTeam {
+                if(standingList[indexPath.row-1].teamName == teamInRussian) {
+                    teamEng = teamInEnglish
+                    break;
+                }
             }
+            
+            for (teamName, teamImg) in standingTeamImg{
+                if(teamEng == teamName) {
+                    img = teamImg
+                    break;
+                }
+            }
+          
+            
+            let url = URL(string: img)
+            let data = try? Data(contentsOf: url!)
+
+            let fullString = NSMutableAttributedString(string: "")
+
+            let image1Attachment = NSTextAttachment()
+            image1Attachment.image = UIImage(data: data!)
+            image1Attachment.bounds = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.height / 23 - 11, height: UIScreen.main.bounds.size.height / 23 - 11)
+            let image1String = NSAttributedString(attachment: image1Attachment)
+
+            fullString.append(image1String)
+            cell?.imageLabel.attributedText = fullString
             cell?.positionLabel.text =
                 " "+String(standingList[indexPath.row-1].position)
             cell?.teamLabel.text = standingList[indexPath.row-1].teamName
-            cell?.teamLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
             cell?.infoLabel.text =
                 betweenLine(number: standingList[indexPath.row-1].games) +
                 betweenLine(number: standingList[indexPath.row-1].wins) +
@@ -147,8 +204,8 @@ class StandingViewController: UIViewController, UITableViewDelegate, UITableView
                 betweenLineGoal(number: standingList[indexPath.row-1].goal)
             cell?.pointLabel.text =
                 String(standingList[indexPath.row-1].points)
-            cell?.pointLabel.textColor = UIColor.init(red: 0, green: 77/255, blue: 152/255, alpha: 1)
             cell?.pointLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
+            cell?.tintColor = UIColor.lightGray
             
         }
         return cell!
@@ -156,9 +213,9 @@ class StandingViewController: UIViewController, UITableViewDelegate, UITableView
     
     func betweenLine(number: Int) -> String{
         if (number <= 9 && number >= 0) {
-            return String(number) + "  ";
+            return String(number) + "    ";
         }
-        return String(number) + " ";
+        return String(number) + "   ";
     }
     
     func betweenLineGoal(number: Int) -> String{
@@ -173,7 +230,27 @@ class StandingViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return UIScreen.main.bounds.size.height / 23;//Choose your custom row height
+        return UIScreen.main.bounds.size.height / 23 - 0.2;//Choose your custom row height
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row != 0) {
+        performSegue(withIdentifier: "showTableDetail", sender: indexPath)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let rowSelected = (sender as! NSIndexPath).row
+        let destinationVC = segue.destination as! TableDetailsViewController
+        destinationVC.position = standingList[rowSelected-1].position;
+        destinationVC.match = standingList[rowSelected-1].games;
+        destinationVC.point = standingList[rowSelected-1].points;
+        destinationVC.teamName =  standingList[rowSelected-1].teamName;
+        destinationVC.imgUrl = standingList[rowSelected-1].imgUrl;
+        destinationVC.goalAgainst = standingList[rowSelected-1].goalAgainst;
+        destinationVC.goal = standingList[rowSelected-1].goalScore;
+        destinationVC.goalDifference = standingList[rowSelected-1].goal;
+        
     }
     
 

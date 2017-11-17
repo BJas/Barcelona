@@ -8,7 +8,8 @@ target 'BarcelonaApp' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'NVActivityIndicatorView'
-
+  pod 'UITextView+Placeholder', '~> 1.2'
+  pod 'FAPanels'
   # Pods for BarcelonaApp
 
   target 'BarcelonaAppTests' do

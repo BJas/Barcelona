@@ -10,6 +10,7 @@ import UIKit
 
 class StandingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var goalsLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!

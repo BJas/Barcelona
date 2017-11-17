@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180AFADC1FBEC37D00F872B4 /* TeamDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180AFADB1FBEC37D00F872B4 /* TeamDetailsViewController.swift */; };
+		180AFADE1FBEDB4400F872B4 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180AFADD1FBEDB4400F872B4 /* Border.swift */; };
 		180B70441F970FD1004140C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B70431F970FD1004140C0 /* AppDelegate.swift */; };
 		180B70461F970FD1004140C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B70451F970FD1004140C0 /* ViewController.swift */; };
 		180B70491F970FD1004140C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180B70471F970FD1004140C0 /* Main.storyboard */; };
@@ -17,15 +19,24 @@
 		180B70741F972216004140C0 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B70731F972216004140C0 /* NewsDetailViewController.swift */; };
 		181335B91FB76D450035E98E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181335B81FB76D450035E98E /* MenuViewController.swift */; };
 		181335BB1FB76E190035E98E /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181335BA1FB76E190035E98E /* MenuTableViewCell.swift */; };
+		185072141FBAB1DA00B01A2A /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185072131FBAB1DA00B01A2A /* CommentViewController.swift */; };
+		185072161FBAB52B00B01A2A /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185072151FBAB52B00B01A2A /* CommentTableViewCell.swift */; };
+		1850721B1FBABAFF00B01A2A /* CommentAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850721A1FBABAFF00B01A2A /* CommentAddViewController.swift */; };
 		18664AAF1FA8DF7C005A35BE /* NewsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18664AAE1FA8DF7C005A35BE /* NewsDetailTableViewCell.swift */; };
-		18802C141FB5FEFB002AEC94 /* NewsDetailCommentViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18802C131FB5FEFB002AEC94 /* NewsDetailCommentViewTableViewCell.swift */; };
-		18802C1C1FB75FD7002AEC94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18802C1B1FB75FD7002AEC94 /* Assets.xcassets */; };
-		18860F401FB2C29200725C35 /* NewsDetailCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18860F3F1FB2C29200725C35 /* NewsDetailCommentTableViewCell.swift */; };
 		18909C441FB83428007D3787 /* StandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C431FB83428007D3787 /* StandingTableViewCell.swift */; };
 		18909C461FB83444007D3787 /* StandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C451FB83444007D3787 /* StandingViewController.swift */; };
-		18909C481FB83546007D3787 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C471FB83546007D3787 /* File.swift */; };
+		18909C481FB83546007D3787 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C471FB83546007D3787 /* Table.swift */; };
+		18909C4F1FB8DF82007D3787 /* TableDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C4E1FB8DF82007D3787 /* TableDetailsViewController.swift */; };
+		18909C581FBA0D14007D3787 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C571FBA0D14007D3787 /* TestViewController.swift */; };
+		18909C5A1FBA0D22007D3787 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C591FBA0D22007D3787 /* Test.swift */; };
+		18909C5D1FBA1D09007D3787 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C5C1FBA1D09007D3787 /* AnswerViewController.swift */; };
+		18909C631FBA2060007D3787 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18909C621FBA2060007D3787 /* Answer.swift */; };
 		18D4E7311FA04CD1004A5EB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18D4E7301FA04CD1004A5EB8 /* GoogleService-Info.plist */; };
 		18F24D6C1F9D03DC00A5BB14 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F24D6B1F9D03DC00A5BB14 /* News.swift */; };
+		18F8D4BB1FBDECD600568B8B /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8D4BA1FBDECD600568B8B /* TeamViewController.swift */; };
+		18F8D4BD1FBDECED00568B8B /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8D4BC1FBDECEC00568B8B /* TeamTableViewCell.swift */; };
+		18F8D4BF1FBE26FD00568B8B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8D4BE1FBE26FD00568B8B /* Team.swift */; };
+		18F8D4C31FBEAA5A00568B8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F8D4C21FBEAA5900568B8B /* Assets.xcassets */; };
 		4A6A1A6487C60BF47BE4AFE7 /* Pods_BarcelonaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 472BAF7E1159CDE31C9EB646 /* Pods_BarcelonaApp.framework */; };
 		5B121DDE6FA182603ACA1D2F /* Pods_BarcelonaAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8D349140055F2E45A55907 /* Pods_BarcelonaAppUITests.framework */; };
 		FE4C18518932B04A43D74233 /* Pods_BarcelonaAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371ACEB19B19FC84FF0BDEC8 /* Pods_BarcelonaAppTests.framework */; };
@@ -49,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180AFADB1FBEC37D00F872B4 /* TeamDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewController.swift; sourceTree = "<group>"; };
+		180AFADD1FBEDB4400F872B4 /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		180B70401F970FD1004140C0 /* BarcelonaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcelonaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		180B70431F970FD1004140C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		180B70451F970FD1004140C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,16 +78,25 @@
 		180B70731F972216004140C0 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		181335B81FB76D450035E98E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		181335BA1FB76E190035E98E /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		185072131FBAB1DA00B01A2A /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		185072151FBAB52B00B01A2A /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		1850721A1FBABAFF00B01A2A /* CommentAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAddViewController.swift; sourceTree = "<group>"; };
 		18664AAE1FA8DF7C005A35BE /* NewsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailTableViewCell.swift; sourceTree = "<group>"; };
-		18802C131FB5FEFB002AEC94 /* NewsDetailCommentViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailCommentViewTableViewCell.swift; sourceTree = "<group>"; };
-		18802C1B1FB75FD7002AEC94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		18860F3F1FB2C29200725C35 /* NewsDetailCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailCommentTableViewCell.swift; sourceTree = "<group>"; };
 		18909C431FB83428007D3787 /* StandingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingTableViewCell.swift; sourceTree = "<group>"; };
 		18909C451FB83444007D3787 /* StandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingViewController.swift; sourceTree = "<group>"; };
-		18909C471FB83546007D3787 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		18909C471FB83546007D3787 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		18909C4E1FB8DF82007D3787 /* TableDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailsViewController.swift; sourceTree = "<group>"; };
+		18909C571FBA0D14007D3787 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		18909C591FBA0D22007D3787 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		18909C5C1FBA1D09007D3787 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		18909C621FBA2060007D3787 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		18D4E7301FA04CD1004A5EB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18EEB6F35D01B3DDC3781F8E /* Pods-BarcelonaAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcelonaAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarcelonaAppUITests/Pods-BarcelonaAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		18F24D6B1F9D03DC00A5BB14 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		18F8D4BA1FBDECD600568B8B /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		18F8D4BC1FBDECEC00568B8B /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		18F8D4BE1FBE26FD00568B8B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		18F8D4C21FBEAA5900568B8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		371ACEB19B19FC84FF0BDEC8 /* Pods_BarcelonaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarcelonaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0A482819974F54866730CA /* Pods-BarcelonaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcelonaAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarcelonaAppTests/Pods-BarcelonaAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		472BAF7E1159CDE31C9EB646 /* Pods_BarcelonaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarcelonaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +135,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180AFADA1FBEC36700F872B4 /* TeamDetails */ = {
+			isa = PBXGroup;
+			children = (
+				180AFADB1FBEC37D00F872B4 /* TeamDetailsViewController.swift */,
+				180AFADD1FBEDB4400F872B4 /* Border.swift */,
+			);
+			path = TeamDetails;
+			sourceTree = "<group>";
+		};
 		180B70371F970FD1004140C0 = {
 			isa = PBXGroup;
 			children = (
@@ -138,8 +169,13 @@
 		180B70421F970FD1004140C0 /* BarcelonaApp */ = {
 			isa = PBXGroup;
 			children = (
+				180AFADA1FBEC36700F872B4 /* TeamDetails */,
+				18F8D4C21FBEAA5900568B8B /* Assets.xcassets */,
+				18F8D4B91FBDECB700568B8B /* Team */,
+				185072121FBAB1BD00B01A2A /* Comments */,
+				18909C561FBA06E1007D3787 /* Test */,
+				18909C4D1FB8D755007D3787 /* TableDetails */,
 				18909C421FB8340D007D3787 /* Table */,
-				18802C1B1FB75FD7002AEC94 /* Assets.xcassets */,
 				18D4E7301FA04CD1004A5EB8 /* GoogleService-Info.plist */,
 				180B70431F970FD1004140C0 /* AppDelegate.swift */,
 				180B70451F970FD1004140C0 /* ViewController.swift */,
@@ -150,8 +186,6 @@
 				180B70471F970FD1004140C0 /* Main.storyboard */,
 				180B704C1F970FD1004140C0 /* LaunchScreen.storyboard */,
 				180B704F1F970FD1004140C0 /* Info.plist */,
-				18860F3F1FB2C29200725C35 /* NewsDetailCommentTableViewCell.swift */,
-				18802C131FB5FEFB002AEC94 /* NewsDetailCommentViewTableViewCell.swift */,
 				181335B81FB76D450035E98E /* MenuViewController.swift */,
 				181335BA1FB76E190035E98E /* MenuTableViewCell.swift */,
 			);
@@ -176,14 +210,69 @@
 			path = BarcelonaAppUITests;
 			sourceTree = "<group>";
 		};
+		185072121FBAB1BD00B01A2A /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				185072171FBABA9900B01A2A /* Comment */,
+				185072131FBAB1DA00B01A2A /* CommentViewController.swift */,
+				185072151FBAB52B00B01A2A /* CommentTableViewCell.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		185072171FBABA9900B01A2A /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				1850721A1FBABAFF00B01A2A /* CommentAddViewController.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 		18909C421FB8340D007D3787 /* Table */ = {
 			isa = PBXGroup;
 			children = (
 				18909C431FB83428007D3787 /* StandingTableViewCell.swift */,
 				18909C451FB83444007D3787 /* StandingViewController.swift */,
-				18909C471FB83546007D3787 /* File.swift */,
+				18909C471FB83546007D3787 /* Table.swift */,
 			);
 			path = Table;
+			sourceTree = "<group>";
+		};
+		18909C4D1FB8D755007D3787 /* TableDetails */ = {
+			isa = PBXGroup;
+			children = (
+				18909C4E1FB8DF82007D3787 /* TableDetailsViewController.swift */,
+			);
+			path = TableDetails;
+			sourceTree = "<group>";
+		};
+		18909C561FBA06E1007D3787 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				18909C5B1FBA1CB8007D3787 /* Answer */,
+				18909C571FBA0D14007D3787 /* TestViewController.swift */,
+				18909C591FBA0D22007D3787 /* Test.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		18909C5B1FBA1CB8007D3787 /* Answer */ = {
+			isa = PBXGroup;
+			children = (
+				18909C5C1FBA1D09007D3787 /* AnswerViewController.swift */,
+				18909C621FBA2060007D3787 /* Answer.swift */,
+			);
+			path = Answer;
+			sourceTree = "<group>";
+		};
+		18F8D4B91FBDECB700568B8B /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				18F8D4BA1FBDECD600568B8B /* TeamViewController.swift */,
+				18F8D4BC1FBDECEC00568B8B /* TeamTableViewCell.swift */,
+				18F8D4BE1FBE26FD00568B8B /* Team.swift */,
+			);
+			path = Team;
 			sourceTree = "<group>";
 		};
 		713D436522615381B99FF640 /* Frameworks */ = {
@@ -327,7 +416,7 @@
 			files = (
 				180B704E1F970FD1004140C0 /* LaunchScreen.storyboard in Resources */,
 				18D4E7311FA04CD1004A5EB8 /* GoogleService-Info.plist in Resources */,
-				18802C1C1FB75FD7002AEC94 /* Assets.xcassets in Resources */,
+				18F8D4C31FBEAA5A00568B8B /* Assets.xcassets in Resources */,
 				180B70491F970FD1004140C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,16 +482,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BarcelonaApp/Pods-BarcelonaApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FAPanels/FAPanels.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FAPanels.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -511,19 +604,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185072141FBAB1DA00B01A2A /* CommentViewController.swift in Sources */,
+				1850721B1FBABAFF00B01A2A /* CommentAddViewController.swift in Sources */,
 				180B70741F972216004140C0 /* NewsDetailViewController.swift in Sources */,
 				180B70461F970FD1004140C0 /* ViewController.swift in Sources */,
+				18F8D4BD1FBDECED00568B8B /* TeamTableViewCell.swift in Sources */,
+				18909C581FBA0D14007D3787 /* TestViewController.swift in Sources */,
+				185072161FBAB52B00B01A2A /* CommentTableViewCell.swift in Sources */,
+				18909C631FBA2060007D3787 /* Answer.swift in Sources */,
+				18F8D4BF1FBE26FD00568B8B /* Team.swift in Sources */,
 				180B70441F970FD1004140C0 /* AppDelegate.swift in Sources */,
 				18909C441FB83428007D3787 /* StandingTableViewCell.swift in Sources */,
+				18F8D4BB1FBDECD600568B8B /* TeamViewController.swift in Sources */,
 				18F24D6C1F9D03DC00A5BB14 /* News.swift in Sources */,
+				180AFADE1FBEDB4400F872B4 /* Border.swift in Sources */,
 				181335BB1FB76E190035E98E /* MenuTableViewCell.swift in Sources */,
 				181335B91FB76D450035E98E /* MenuViewController.swift in Sources */,
-				18802C141FB5FEFB002AEC94 /* NewsDetailCommentViewTableViewCell.swift in Sources */,
-				18860F401FB2C29200725C35 /* NewsDetailCommentTableViewCell.swift in Sources */,
 				180B70721F9713F7004140C0 /* NewsTableViewCell.swift in Sources */,
-				18909C481FB83546007D3787 /* File.swift in Sources */,
+				18909C5A1FBA0D22007D3787 /* Test.swift in Sources */,
+				18909C481FB83546007D3787 /* Table.swift in Sources */,
 				18909C461FB83444007D3787 /* StandingViewController.swift in Sources */,
+				18909C5D1FBA1D09007D3787 /* AnswerViewController.swift in Sources */,
+				18909C4F1FB8DF82007D3787 /* TableDetailsViewController.swift in Sources */,
 				18664AAF1FA8DF7C005A35BE /* NewsDetailTableViewCell.swift in Sources */,
+				180AFADC1FBEC37D00F872B4 /* TeamDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

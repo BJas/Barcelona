@@ -12,17 +12,26 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var menuTableView: UITableView!
     
-    let titleArr = ["Главная", "Матчи", "Таблица", "Состав"]
+    let titleArr = ["home.png", "ball.png", "table.png", "match.png", "game.png"]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titleArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell") as! MenuTableViewCell
-        cell.menuLabel.text = titleArr[indexPath.row]
-        cell.preservesSuperviewLayoutMargins = false
-        cell.separatorInset = UIEdgeInsets.zero
-        cell.layoutMargins = UIEdgeInsets.zero
+        let fullString = NSMutableAttributedString(string: "")
+        
+        let image1Attachment = NSTextAttachment()
+        image1Attachment.image = UIImage(named: titleArr[indexPath.row])
+        image1Attachment.bounds = CGRect(x: 0.0, y: 0.0, width: 24, height: 24)
+        let image1String = NSAttributedString(attachment: image1Attachment)
+        
+        fullString.append(image1String)
+        cell.menuLabel.attributedText = fullString
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor(red: 165/255, green: 0, blue: 68/255, alpha: 0.8)
+        cell.selectedBackgroundView = bgColorView
+        cell.menuLabel.tintColor = UIColor(red: 165/255, green: 0, blue: 68/255, alpha: 1)
         return cell
     }
     
@@ -33,14 +42,19 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             performSegue(withIdentifier: "showMainPage", sender: indexPath)
         case 2:
             performSegue(withIdentifier: "showStandingPage", sender: indexPath)
+        case 3:
+            performSegue(withIdentifier: "showTeamPage", sender: indexPath)
+        case 4:
+            performSegue(withIdentifier: "showTestPage", sender: indexPath)
         default:
             break;
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        menuTableView.backgroundColor = UIColor.init(red: 165/255, green: 0, blue: 68/255, alpha: 1)
+        menuTableView.bounces = false
         // Do any additional setup after loading the view.
     }
 

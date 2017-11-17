@@ -8,7 +8,6 @@
 
 import UIKit
 import FirebaseDatabase
-import NVActivityIndicatorView
 
 class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     var rootRef: DatabaseReference! = nil
@@ -27,8 +26,8 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     }
     
     func showMenu() {
+        self.menuVC.view.backgroundColor = UIColor.white.withAlphaComponent(0)
         UIView.animate(withDuration: 0.3) { ()->  Void in
-            self.menuVC.view.backgroundColor = UIColor.white.withAlphaComponent(0)
             self.menuVC.view.frame = CGRect(x: 0, y: 63, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
             self.addChildViewController(self.menuVC)
             self.view.addSubview(self.menuVC.view)
@@ -54,9 +53,12 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         }
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.separatorColor = UIColor.clear;
         menuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToGosture))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
@@ -67,16 +69,12 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
         
-        let myActivityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2-25, y: self.view.frame.height/2-25, width: 50, height: 50))
-        myActivityIndicator.color =  UIColor.init(red: 0/255, green: 77/255, blue: 152/255, alpha: 1)
-        myActivityIndicator.type = .ballSpinFadeLoader
-        myActivityIndicator.startAnimating()
-        view.addSubview(myActivityIndicator)
         
         rootRef = Database.database().reference()
         let itemsRef = rootRef.child("news")
         
         itemsRef.observe(DataEventType.value, with: { (snapshot) in
+        self.newsList.removeAll()
         for news in snapshot.children.allObjects as![DataSnapshot] {
             let newsObject = news.value as? [String: AnyObject]
             let newsTitle = newsObject?["title"] as? String ?? ""
@@ -86,12 +84,14 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             let newsId = newsObject?["id"] as? String ?? ""
             self.newsList.append(News(id: newsId, title: newsTitle, imgUrl: newsImgUrl, description: newsDesc, date: newsDate))
         }
-            myActivityIndicator.stopAnimating()
+        self.newsList.reverse()
         self.tableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)
         }
     }
+    
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
