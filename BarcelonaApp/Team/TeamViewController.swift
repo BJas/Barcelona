@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import NVActivityIndicatorView
 
 class TeamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var rootRef: DatabaseReference! = nil
@@ -57,6 +58,7 @@ class TeamViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         menuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
@@ -68,6 +70,12 @@ class TeamViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
+        
+        let myActivityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2-15, y: self.view.frame.height/2-15, width: 30, height: 30))
+        myActivityIndicator.color =  UIColor.init(red: 165/255, green: 0/255, blue: 68/255, alpha: 1)
+        myActivityIndicator.type = .lineSpinFadeLoader
+        myActivityIndicator.startAnimating()
+        view.addSubview(myActivityIndicator)
         
         //Firebase
         rootRef = Database.database().reference()
@@ -100,6 +108,7 @@ class TeamViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.team.append(self.defenders)
             self.team.append(self.midfield)
             self.team.append(self.strikers)
+            myActivityIndicator.stopAnimating()
             self.teamTableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)

@@ -204,7 +204,7 @@ class StandingViewController: UIViewController, UITableViewDelegate, UITableView
                 betweenLineGoal(number: standingList[indexPath.row-1].goal)
             cell?.pointLabel.text =
                 String(standingList[indexPath.row-1].points)
-            cell?.pointLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 17.0)
+            cell?.pointLabel.font = UIFont(name:"HelveticaNeue", size: 15.0)
             cell?.tintColor = UIColor.lightGray
             
         }

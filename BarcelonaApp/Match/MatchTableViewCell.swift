@@ -1,17 +1,19 @@
 //
-//  DetailsSecondTableViewCell.swift
+//  MatchTableViewCell.swift
 //  BarcelonaApp
 //
-//  Created by Apple on 15.11.17.
+//  Created by Apple on 17.11.17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 
 import UIKit
 
-class DetailsSecondTableViewCell: UITableViewCell {
+class MatchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var teamLabel: UILabel!
+    @IBOutlet weak var awayLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

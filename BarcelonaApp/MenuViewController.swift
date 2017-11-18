@@ -40,6 +40,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         switch indexPath.row {
         case 0:
             performSegue(withIdentifier: "showMainPage", sender: indexPath)
+        case 1:
+            performSegue(withIdentifier: "showMatchPage", sender: indexPath)
         case 2:
             performSegue(withIdentifier: "showStandingPage", sender: indexPath)
         case 3:

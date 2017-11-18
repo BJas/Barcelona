@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import NVActivityIndicatorView
 
 class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     var rootRef: DatabaseReference! = nil
@@ -27,6 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     func showMenu() {
         self.menuVC.view.backgroundColor = UIColor.white.withAlphaComponent(0)
+        
         UIView.animate(withDuration: 0.3) { ()->  Void in
             self.menuVC.view.frame = CGRect(x: 0, y: 63, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
             self.addChildViewController(self.menuVC)
@@ -69,7 +71,14 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
         
+        //Activity Indicator
+        let myActivityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2-15, y: self.view.frame.height/2-15, width: 30, height: 30))
+        myActivityIndicator.color =  UIColor.init(red: 165/255, green: 0/255, blue: 68/255, alpha: 1)
+        myActivityIndicator.type = .lineSpinFadeLoader
+        myActivityIndicator.startAnimating()
+        view.addSubview(myActivityIndicator)
         
+        //Firebase
         rootRef = Database.database().reference()
         let itemsRef = rootRef.child("news")
         
@@ -86,6 +95,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         }
         self.newsList.reverse()
         self.tableView.reloadData()
+        myActivityIndicator.stopAnimating()
         }) { (error) in
             print(error.localizedDescription)
         }

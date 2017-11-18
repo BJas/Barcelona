@@ -12,6 +12,7 @@ import Alamofire
 class TableDetailsViewController:UIViewController {
     
     
+    @IBOutlet weak var backUIView: UIView!
     var teamName: String?
     var position = 0
     var match = 0
@@ -41,6 +42,8 @@ class TableDetailsViewController:UIViewController {
     @IBOutlet weak var TableView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        backUIView.backgroundColor = UIColor(patternImage: UIImage(named: "uefa")!)
+        self.title = teamName;
         teamNameLabel.text = teamName;
         posTitleLabel.text = "Позиция";
         posLabel.text = String(position);
@@ -62,11 +65,9 @@ class TableDetailsViewController:UIViewController {
         TableView.layer.shadowColor = UIColor.black.cgColor
         TableView.layer.shadowOpacity = 0.5
         TableView.layer.shadowOffset = .zero
-        TableView.layer.shadowRadius = 5
+        TableView.layer.shadowRadius = 2
         
         TableView.layer.cornerRadius = 8
-        TableView.layer.borderColor = UIColor.gray.cgColor
-        TableView.layer.borderWidth = 0.5
     }
     
     override func didReceiveMemoryWarning() {
