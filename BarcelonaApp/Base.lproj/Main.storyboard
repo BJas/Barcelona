@@ -39,6 +39,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QPK-fc-fD1">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="292" id="t1L-ei-1Mp" customClass="NewsTableViewCell" customModule="BarcelonaApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="292"/>
@@ -48,34 +49,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TkD-H4-Ukn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="176"/>
+                                                    <rect key="frame" x="0.0" y="8" width="375" height="176"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="176" id="6gd-vb-PXM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzs-vC-CWq">
-                                                    <rect key="frame" x="10" y="201" width="355" height="50"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzs-vC-CWq">
+                                                    <rect key="frame" x="10" y="214" width="355" height="50.5"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVw-h7-Qef">
-                                                    <rect key="frame" x="10" y="259" width="159.5" height="15"/>
-                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                    <rect key="frame" x="10" y="267" width="158.5" height="14"/>
+                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                                     <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="rVw-h7-Qef" secondAttribute="bottom" constant="17.5" id="E7g-XV-Seq"/>
-                                                <constraint firstItem="rVw-h7-Qef" firstAttribute="width" secondItem="bih-sm-o8c" secondAttribute="width" multiplier="0.3" constant="46.5" id="QRD-lB-tMV"/>
+                                                <constraint firstAttribute="bottom" secondItem="rVw-h7-Qef" secondAttribute="bottom" constant="10.5" id="E7g-XV-Seq"/>
+                                                <constraint firstItem="rVw-h7-Qef" firstAttribute="width" secondItem="bih-sm-o8c" secondAttribute="width" multiplier="0.3" constant="46" id="QRD-lB-tMV"/>
                                                 <constraint firstAttribute="trailing" secondItem="TkD-H4-Ukn" secondAttribute="trailing" id="UdP-Sk-5BO"/>
-                                                <constraint firstItem="TkD-H4-Ukn" firstAttribute="top" secondItem="bih-sm-o8c" secondAttribute="top" id="WPN-AX-CFl"/>
+                                                <constraint firstItem="TkD-H4-Ukn" firstAttribute="top" secondItem="bih-sm-o8c" secondAttribute="top" constant="8" id="WPN-AX-CFl"/>
                                                 <constraint firstItem="rVw-h7-Qef" firstAttribute="leading" secondItem="bih-sm-o8c" secondAttribute="leading" constant="10" id="gIn-iL-kzV"/>
-                                                <constraint firstItem="Uzs-vC-CWq" firstAttribute="height" secondItem="bih-sm-o8c" secondAttribute="height" multiplier="0.3" constant="-37.450000000000003" id="iv0-dD-8Hn"/>
+                                                <constraint firstItem="Uzs-vC-CWq" firstAttribute="height" secondItem="bih-sm-o8c" secondAttribute="height" multiplier="0.3" constant="-37" id="iv0-dD-8Hn"/>
                                                 <constraint firstItem="rVw-h7-Qef" firstAttribute="height" secondItem="bih-sm-o8c" secondAttribute="height" multiplier="0.05" id="l0x-vV-cJe"/>
                                                 <constraint firstAttribute="trailing" secondItem="Uzs-vC-CWq" secondAttribute="trailing" constant="10" id="mH6-EZ-RJN"/>
-                                                <constraint firstItem="Uzs-vC-CWq" firstAttribute="top" secondItem="TkD-H4-Ukn" secondAttribute="bottom" constant="25" id="ptD-Gq-A4n"/>
+                                                <constraint firstItem="Uzs-vC-CWq" firstAttribute="top" secondItem="TkD-H4-Ukn" secondAttribute="bottom" constant="30" id="ptD-Gq-A4n"/>
                                                 <constraint firstItem="Uzs-vC-CWq" firstAttribute="leading" secondItem="bih-sm-o8c" secondAttribute="leading" constant="10" id="sHE-y9-KM5"/>
                                                 <constraint firstItem="TkD-H4-Ukn" firstAttribute="leading" secondItem="bih-sm-o8c" secondAttribute="leading" id="uph-hA-0zY"/>
                                                 <constraint firstItem="TkD-H4-Ukn" firstAttribute="height" secondItem="bih-sm-o8c" secondAttribute="height" multiplier="0.5" constant="30" id="xuQ-rF-dgq"/>
@@ -105,7 +106,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Главная" id="RJo-UJ-cTz" colorLabel="IBBuiltInLabel-Red">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="if_menu-alt_134216 (3)" largeContentSizeImage="menu2" id="pKU-o1-g5c">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="if_menu-alt_134216 (3)" largeContentSizeImage="barButtonItem:pKU-o1-g5c:largeContentSizeImage" id="pKU-o1-g5c">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -1596,12 +1597,26 @@
         </scene>
     </scenes>
     <resources>
+        <image name="barButtonItem:pKU-o1-g5c:largeContentSizeImage" width="29" height="29">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBMU
+GR4fJSYsLzU4VSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBz
+V05TQ29sb3KAAoAMEiTAAACAA4AKWHsyOSwgMjl90hUKFhhaTlMub2JqZWN0c6EXgASACdIVChoYohsc
+gAWABoAJEAXTIAohIiMkV05TLmJhc2VbTlMucmVsYXRpdmWAAIAIgAdfEHNmaWxlOi8vL0FwcGxpY2F0
+aW9ucy9YY29kZS5hcHAvQ29udGVudHMvUGx1Z0lucy9JREVJbnRlcmZhY2VCdWlsZGVyS2l0LmZyYW1l
+d29yay9SZXNvdXJjZXMvSUJNaXNzaW5nSW1hZ2VHbHlwaC50aWZm0icoKSpaJGNsYXNzbmFtZVgkY2xh
+c3Nlc1VOU1VSTKIpK1hOU09iamVjdNInKC0uV05TQXJyYXmiLSvTMDEKMjM0V05TV2hpdGVcTlNDb2xv
+clNwYWNlRDAgMAAQA4AL0icoNjdXTlNDb2xvcqI2K9InKDk6V05TSW1hZ2WiOStfEA9OU0tleWVkQXJj
+aGl2ZXLRPT5Ucm9vdIABAAgAEQAaACMALQAyADcARQBLAFYAXQBkAHEAeACAAIIAhACJAIsAjQCWAJsA
+pgCoAKoArACxALQAtgC4ALoAvADDAMsA1wDZANsA3QFTAVgBYwFsAXIBdQF+AYMBiwGOAZUBnQGqAa8B
+sQGzAbgBwAHDAcgB0AHTAeUB6AHtAAAAAAAAAgEAAAAAAAAAPwAAAAAAAAAAAAAAAAAAAe8
+</mutableData>
+        </image>
         <image name="calendar" width="16" height="16"/>
         <image name="football-shirt" width="16" height="16"/>
         <image name="gamepad-2" width="16" height="16"/>
         <image name="home-1" width="16" height="16"/>
         <image name="if_menu-alt_134216 (3)" width="32" height="32"/>
-        <image name="menu2" width="29" height="29"/>
         <image name="soccer-ball-2" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
