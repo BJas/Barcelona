@@ -53,25 +53,46 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let _ : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let sw = storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+        let navigationController: UINavigationController?
+    
+        self.view.window?.rootViewController = sw
         switch segue.identifier {
         case "showMain"?:
-            _ = segue.destination as?
-            ViewController
-        
-//            nextViewController = storyBoard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-//            self.present(nextViewController!, animated:true, completion:nil)
+            let destinationController = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            navigationController = UINavigationController(rootViewController: destinationController)
+            getStyleNavigation(navigationController: navigationController!)
+            sw.pushFrontViewController(navigationController, animated: true)
         case "showMatch"?:
-            _ = segue.destination as? MatchViewController
+            let destinationController = self.storyboard?.instantiateViewController(withIdentifier: "MatchViewController") as! MatchViewController
+            navigationController = UINavigationController(rootViewController: destinationController)
+            getStyleNavigation(navigationController: navigationController!)
+            sw.pushFrontViewController(navigationController, animated: true)
         case "showTable"?:
-            _ = segue.destination as? StandingViewController
+            let destinationController = self.storyboard?.instantiateViewController(withIdentifier: "StandingViewController") as! StandingViewController
+            navigationController = UINavigationController(rootViewController: destinationController)
+            getStyleNavigation(navigationController: navigationController!)
+            sw.pushFrontViewController(navigationController, animated: true)
         case "showTeam"?:
-            _ = segue.destination as? TeamViewController
+            let destinationController = self.storyboard?.instantiateViewController(withIdentifier: "TeamViewController") as! TeamViewController
+            navigationController = UINavigationController(rootViewController: destinationController)
+            getStyleNavigation(navigationController: navigationController!)
+            sw.pushFrontViewController(navigationController, animated: true)
         case "showTest"?:
-            _ = segue.destination as? TestViewController
+            
+            let destinationController = self.storyboard?.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
+            navigationController = UINavigationController(rootViewController: destinationController)
+            getStyleNavigation(navigationController: navigationController!)
+            sw.pushFrontViewController(navigationController, animated: true)
         default:
             break;
         }
+    }
+    
+    func getStyleNavigation(navigationController: UINavigationController) {
+        navigationController.navigationBar.barTintColor = UIColor(red: 165/255, green: 0, blue: 68/255, alpha: 1)
+        navigationController.navigationBar.tintColor = UIColor.white
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
 
     /*

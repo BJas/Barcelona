@@ -34,7 +34,7 @@ class AnswerViewController: UIViewController {
     }
     
     @IBAction func testAgain(_ sender: UIButton) {
-        let vc : TestViewController = storyboard?.instantiateViewController(withIdentifier: "testVC")  as! TestViewController
+        let vc : TestViewController = storyboard?.instantiateViewController(withIdentifier: "TestViewController")  as! TestViewController
         vc.newList = []
         let navController = UINavigationController(rootViewController: vc)
         self.present(navController, animated: true, completion: nil)

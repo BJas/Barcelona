@@ -122,7 +122,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="mTJ-Lg-QVD">
             <objects>
-                <viewController id="Rgz-0C-5Ym" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SWRevealViewController" id="Rgz-0C-5Ym" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FZ0-Y2-ceA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -768,7 +768,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cHE-0h-VTi" firstAttribute="leading" secondItem="GvJ-lh-aV7" secondAttribute="leading" id="5ge-jb-nm6"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GvJ-lh-aV7" secondAttribute="trailing" id="OA1-HQ-A4d"/>
