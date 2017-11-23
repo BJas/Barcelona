@@ -9,12 +9,11 @@
 import UIKit
 import Alamofire
 import FirebaseDatabase
-import NVActivityIndicatorView
 
-class StandingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StandingViewController: IndicatorViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     var standingList:Array<Standing> = [];
     @IBOutlet weak var standingTableView: UITableView!
-    var menuVC : MenuViewController!
     var teamEng = ""
     var standingTeam = [String: String]()
     var standingTeamImg = [String: String]()
@@ -22,23 +21,9 @@ class StandingViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         standingTableView.tableFooterView = UIView()
-        menuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToGosture))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToGosture))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
-        
-        self.view.addGestureRecognizer(swipeRight)
-        self.view.addGestureRecognizer(swipeLeft)
-        
-        let myActivityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2-15, y: self.view.frame.height/2-15, width: 30, height: 30))
-        myActivityIndicator.color =  UIColor.init(red: 165/255, green: 0/255, blue: 68/255, alpha: 1)
-        myActivityIndicator.type = .lineSpinFadeLoader
-        myActivityIndicator.startAnimating()
-        view.addSubview(myActivityIndicator)
-        
+        standingTableView.tableFooterView = UIView()
+        Defs.reveal(self, menuButton: self.menuButton)
+        self.activityIndicatorBegin()
         //Firebase
         rootRef = Database.database().reference()
         let itemsRef = rootRef.child("teams")
@@ -94,7 +79,7 @@ class StandingViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                 }
             }
-            myActivityIndicator.stopAnimating()
+            self.activityIndicatorEnd()
             self.standingTableView.reloadData()
         }
     }
@@ -102,43 +87,6 @@ class StandingViewController: UIViewController, UITableViewDelegate, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func showMenu() {
-        self.menuVC.view.backgroundColor = UIColor.white.withAlphaComponent(0)
-        UIView.animate(withDuration: 0.3) { ()->  Void in
-            self.menuVC.view.backgroundColor = UIColor.white.withAlphaComponent(0)
-            self.menuVC.view.frame = CGRect(x: 0, y: 63, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-            self.addChildViewController(self.menuVC)
-            self.view.addSubview(self.menuVC.view)
-            AppDelegate.menuBool = false
-        }
-    }
-    
-    func closeMenu() {
-        UIView.animate(withDuration: 0.3, animations: { ()-> Void in
-            self.menuVC.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 63, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-        }){ (finished) in
-            self.menuVC.view.removeFromSuperview()
-        }
-        AppDelegate.menuBool = true
-    }
-    
-    @objc func respondToGosture(gesture: UISwipeGestureRecognizer){
-        switch gesture.direction {
-        case UISwipeGestureRecognizerDirection.right: showMenu()
-        case UISwipeGestureRecognizerDirection.left: closeMenu()
-        default:
-            break;
-        }
-    }
-    
-    @IBAction func changeMenu(_ sender: Any) {
-        if(AppDelegate.menuBool) {
-            showMenu()
-        } else {
-            closeMenu()
-        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

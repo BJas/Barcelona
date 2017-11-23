@@ -8,76 +8,22 @@
 
 import UIKit
 import FirebaseDatabase
-import NVActivityIndicatorView
 
-class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class ViewController: IndicatorViewController,  UITableViewDelegate,UITableViewDataSource {
     var rootRef: DatabaseReference! = nil
     @IBOutlet weak var tableView: UITableView!
     var newsList:Array<News> = [];
-    
-    var menuVC : MenuViewController!
-    
-    @IBAction func menuAction(_ sender: UIBarButtonItem) {
-        
-        if(AppDelegate.menuBool) {
-            showMenu()
-        } else {
-            closeMenu()
-        }
-    }
-    
-    func showMenu() {
-        self.menuVC.view.backgroundColor = UIColor.white.withAlphaComponent(0)
-        
-        UIView.animate(withDuration: 0.3) { ()->  Void in
-            self.menuVC.view.frame = CGRect(x: 0, y: 63, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-            self.addChildViewController(self.menuVC)
-            self.view.addSubview(self.menuVC.view)
-        AppDelegate.menuBool = false
-        }
-    }
-    
-    func closeMenu() {
-        UIView.animate(withDuration: 0.3, animations: { ()-> Void in
-            self.menuVC.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: 63, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-        }){ (finished) in
-            self.menuVC.view.removeFromSuperview()
-        }
-        AppDelegate.menuBool = true
-    }
-    
-    @objc func respondToGosture(gesture: UISwipeGestureRecognizer){
-        switch gesture.direction {
-        case UISwipeGestureRecognizerDirection.right: showMenu()
-        case UISwipeGestureRecognizerDirection.left: closeMenu()
-        default:
-            break;
-        }
-    }
-    
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.separatorColor = UIColor.clear;
-        menuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToGosture))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToGosture))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
-        
-        self.view.addGestureRecognizer(swipeRight)
-        self.view.addGestureRecognizer(swipeLeft)
+        Defs.reveal(self, menuButton: self.menuButton)
         
         //Activity Indicator
-        let myActivityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width/2-15, y: self.view.frame.height/2-15, width: 30, height: 30))
-        myActivityIndicator.color =  UIColor.init(red: 165/255, green: 0/255, blue: 68/255, alpha: 1)
-        myActivityIndicator.type = .lineSpinFadeLoader
-        myActivityIndicator.startAnimating()
-        view.addSubview(myActivityIndicator)
-        
+        self.activityIndicatorBegin()
         //Firebase
         rootRef = Database.database().reference()
         let itemsRef = rootRef.child("news")
@@ -95,13 +41,11 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         }
         self.newsList.reverse()
         self.tableView.reloadData()
-        myActivityIndicator.stopAnimating()
+        self.activityIndicatorEnd()
         }) { (error) in
             print(error.localizedDescription)
         }
     }
-    
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
