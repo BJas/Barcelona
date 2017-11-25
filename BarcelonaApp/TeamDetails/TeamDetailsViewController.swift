@@ -10,6 +10,7 @@ import UIKit
 
 class TeamDetailsViewController: UIViewController {
     
+    @IBOutlet weak var topImageView: UIView!
     @IBOutlet weak var teamImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
@@ -47,13 +48,14 @@ class TeamDetailsViewController: UIViewController {
     }
     
     func getTopView() {
+        let url = URL(string: imgUrl!)
+        let data = try? Data(contentsOf: url!)
+        topImageView.backgroundColor = UIColor(patternImage: UIImage(named: "camp")!)
         let borderColor = UIColor(red: 0, green: 38/255, blue: 77/255, alpha: 1)
         teamImageView.layer.borderColor = borderColor.cgColor
         teamImageView.layer.borderWidth = 5.0
         teamImageView.layer.cornerRadius = 8.0
         teamImageView.clipsToBounds = true
-        let url = URL(string: imgUrl!)
-        let data = try? Data(contentsOf: url!)
         teamImageView.image = UIImage(data: data!)
         nameLabel.text = name
         positionLabel.text = position
@@ -63,8 +65,6 @@ class TeamDetailsViewController: UIViewController {
         
         ageLabel.text = "Возраст:" + "\n" + String(age)
         heightLabel.text = "Рост:" + "\n" + String(height)
-        heightLabel.layer.addBorder(edge: UIRectEdge.left, color: UIColor.lightGray, thickness: 1)
-        heightLabel.layer.addBorder(edge: UIRectEdge.right, color: UIColor.lightGray, thickness: 1)
         weightLabel.text = "Вес:" + "\n" + String(weight)
     }
     

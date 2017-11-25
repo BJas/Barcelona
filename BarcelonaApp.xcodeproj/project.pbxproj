@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1802AA0F1FC6A1D200B780B3 /* IndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802AA0E1FC6A1D200B780B3 /* IndicatorViewController.swift */; };
 		180AFADC1FBEC37D00F872B4 /* TeamDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180AFADB1FBEC37D00F872B4 /* TeamDetailsViewController.swift */; };
-		180AFADE1FBEDB4400F872B4 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180AFADD1FBEDB4400F872B4 /* Border.swift */; };
 		180AFAE11FBF44DC00F872B4 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180AFAE01FBF44DC00F872B4 /* MatchViewController.swift */; };
 		180AFAE31FBF457000F872B4 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180AFAE21FBF457000F872B4 /* MatchTableViewCell.swift */; };
 		180AFAF11FC0287E00F872B4 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180AFAF01FC0287E00F872B4 /* Match.swift */; };
@@ -67,7 +66,6 @@
 /* Begin PBXFileReference section */
 		1802AA0E1FC6A1D200B780B3 /* IndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewController.swift; sourceTree = "<group>"; };
 		180AFADB1FBEC37D00F872B4 /* TeamDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewController.swift; sourceTree = "<group>"; };
-		180AFADD1FBEDB4400F872B4 /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		180AFAE01FBF44DC00F872B4 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		180AFAE21FBF457000F872B4 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		180AFAF01FC0287E00F872B4 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				180AFADB1FBEC37D00F872B4 /* TeamDetailsViewController.swift */,
-				180AFADD1FBEDB4400F872B4 /* Border.swift */,
 			);
 			path = TeamDetails;
 			sourceTree = "<group>";
@@ -681,7 +678,6 @@
 				18F8D4BB1FBDECD600568B8B /* TeamViewController.swift in Sources */,
 				1802AA0F1FC6A1D200B780B3 /* IndicatorViewController.swift in Sources */,
 				18F24D6C1F9D03DC00A5BB14 /* News.swift in Sources */,
-				180AFADE1FBEDB4400F872B4 /* Border.swift in Sources */,
 				180B70721F9713F7004140C0 /* NewsTableViewCell.swift in Sources */,
 				18B1E8DE1FC5C9E80022C760 /* Defs.swift in Sources */,
 				18909C5A1FBA0D22007D3787 /* Test.swift in Sources */,
