@@ -25,8 +25,10 @@ class TestViewController: IndicatorViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         Defs.reveal(self, menuButton: self.menuButton)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 165/255, green: 0, blue: 62/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.activityIndicatorBegin()
         //Firebase
         
